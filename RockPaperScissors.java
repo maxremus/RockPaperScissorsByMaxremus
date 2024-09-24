@@ -9,11 +9,14 @@ public class RockPaperScissors {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-       System.out.print("Choose [r]ock, [p]aper or [s]cissors: ");
+
 
         String playerMove = "";
+        Boolean playAgain = true;
 
-        while (true) {
+
+        while (playAgain) {
+            System.out.print("Choose [r]ock, [p]aper or [s]cissors: ");
             String playerChoice = scanner.nextLine();
             if (playerChoice.equals("r") || playerChoice.equals("rock")) {
                 playerMove = ROCK;
@@ -56,6 +59,17 @@ public class RockPaperScissors {
                 System.out.println("You lose.");
             } else {
                 System.out.println("This game was a draw.");
+            }
+            System.out.println("Game over");
+
+
+            System.out.println("Play again? (y/n)");
+            String choise = scanner.nextLine();
+
+            if (!choise.equals("y") && !choise.equals("yes")) {
+                System.out.println("Choose [r]ock, [p]aper or [s]cissors:");
+                playAgain = false;
+                System.out.println("Play again");
             }
         }
 
